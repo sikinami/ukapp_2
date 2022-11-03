@@ -1,0 +1,210 @@
+name: ukapp
+description: A new Flutter project.
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  photo_view:
+  liquid_swipe:
+  flutter_map: 1.1.1
+  latlong2:
+  flutter_map_marker_cluster:
+  sliding_up_panel:
+  csv:
+  path_provider: ^2.0.11
+  intl:
+  qr_code_scanner: ^1.0.0
+  flutter_launcher_icons:
+  flutter_native_splash:
+  youtube_player_flutter:
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/1F/0/0/
+    - assets/1F/1/0/
+    - assets/1F/2/0/
+    - assets/1F/2/1/
+    - assets/1F/3/0/
+    - assets/1F/3/1/
+    - assets/1F/3/2/
+    - assets/1F/4/0/
+    - assets/1F/4/1/
+    - assets/1F/4/2/
+    - assets/1F/4/3/
+    - assets/1F/4/4/
+    - assets/1F/4/5/
+    - assets/1F/5/0/
+    - assets/1F/5/1/
+    - assets/1F/5/2/
+    - assets/1F/5/3/
+    - assets/1F/5/4/
+    - assets/1F/5/5/
+    - assets/1F/5/6/
+    - assets/1F/5/7/
+    - assets/1F/5/8/
+    - assets/1F/5/9/
+    - assets/1F/5/10/
+    - assets/1F/5/11/
+    - assets/1F/6/1/
+    - assets/1F/6/2/
+    - assets/1F/6/3/
+    - assets/1F/6/4/
+    - assets/1F/6/5/
+    - assets/1F/6/6/
+    - assets/1F/6/7/
+    - assets/1F/6/8/
+    - assets/1F/6/9/
+    - assets/1F/6/10/
+    - assets/1F/6/11/
+    - assets/1F/6/12/
+    - assets/1F/6/13/
+    - assets/1F/6/14/
+    - assets/1F/6/15/
+    - assets/1F/6/16/
+    - assets/1F/6/17/
+    - assets/1F/6/18/
+    - assets/1F/6/19/
+    - assets/1F/6/20/
+    - assets/1F/6/21/
+    - assets/1F/6/22/
+    - assets/1F/6/23/
+    - assets/2F/0/0/
+    - assets/2F/1/0/
+    - assets/2F/2/0/
+    - assets/2F/2/1/
+    - assets/2F/3/0/
+    - assets/2F/3/1/
+    - assets/2F/3/2/
+    - assets/2F/4/0/
+    - assets/2F/4/1/
+    - assets/2F/4/2/
+    - assets/2F/4/3/
+    - assets/2F/4/4/
+    - assets/2F/4/5/
+    - assets/2F/5/0/
+    - assets/2F/5/1/
+    - assets/2F/5/2/
+    - assets/2F/5/3/
+    - assets/2F/5/4/
+    - assets/2F/5/5/
+    - assets/2F/5/6/
+    - assets/2F/5/7/
+    - assets/2F/5/8/
+    - assets/2F/5/9/
+    - assets/2F/5/10/
+    - assets/2F/5/11/
+    - assets/2F/6/1/
+    - assets/2F/6/2/
+    - assets/2F/6/3/
+    - assets/2F/6/4/
+    - assets/2F/6/5/
+    - assets/2F/6/6/
+    - assets/2F/6/7/
+    - assets/2F/6/8/
+    - assets/2F/6/9/
+    - assets/2F/6/10/
+    - assets/2F/6/11/
+    - assets/2F/6/12/
+    - assets/2F/6/13/
+    - assets/2F/6/14/
+    - assets/2F/6/15/
+    - assets/2F/6/16/
+    - assets/2F/6/17/
+    - assets/2F/6/18/
+    - assets/2F/6/19/
+    - assets/2F/6/20/
+    - assets/2F/6/21/
+    - assets/2F/6/22/
+    - assets/2F/6/23/
+    - assets/3F/0/0/
+    - assets/3F/1/0/
+    - assets/3F/2/0/
+    - assets/3F/2/1/
+    - assets/3F/3/0/
+    - assets/3F/3/1/
+    - assets/3F/3/2/
+    - assets/3F/4/0/
+    - assets/3F/4/1/
+    - assets/3F/4/2/
+    - assets/3F/4/3/
+    - assets/3F/4/4/
+    - assets/3F/4/5/
+    - assets/3F/5/0/
+    - assets/3F/5/1/
+    - assets/3F/5/2/
+    - assets/3F/5/3/
+    - assets/3F/5/4/
+    - assets/3F/5/5/
+    - assets/3F/5/6/
+    - assets/3F/5/7/
+    - assets/3F/5/8/
+    - assets/3F/5/9/
+    - assets/3F/5/10/
+    - assets/3F/5/11/
+    - assets/3F/6/1/
+    - assets/3F/6/2/
+    - assets/3F/6/3/
+    - assets/3F/6/4/
+    - assets/3F/6/5/
+    - assets/3F/6/6/
+    - assets/3F/6/7/
+    - assets/3F/6/8/
+    - assets/3F/6/9/
+    - assets/3F/6/10/
+    - assets/3F/6/11/
+    - assets/3F/6/12/
+    - assets/3F/6/13/
+    - assets/3F/6/14/
+    - assets/3F/6/15/
+    - assets/3F/6/16/
+    - assets/3F/6/17/
+    - assets/3F/6/18/
+    - assets/3F/6/19/
+    - assets/3F/6/20/
+    - assets/3F/6/21/
+    - assets/3F/6/22/
+    - assets/3F/6/23/
+    - assets/全体/0/0/
+    - assets/全体/1/0/
+    - assets/全体/2/0/
+    - assets/全体/2/1/
+    - assets/全体/3/0/
+    - assets/全体/3/1/
+    - assets/全体/3/2/
+    - assets/全体/4/0/
+    - assets/全体/4/1/
+    - assets/全体/4/2/
+    - assets/全体/4/3/
+    - assets/全体/4/4/
+    - assets/全体/4/5/
+    - assets/
+    - assets/images/
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: 'assets/images/icon.png'
+  adaptive_icon_background: '#ffffff'
+  adaptive_icon_foreground: 'assets/images/icon_adaptive_foreground.png'
+
+flutter_native_splash:
+  color: '#ffffff'
+  image: 'assets/images/splash.png'
+  color_dark: '#23282f'
+  image_dark: 'assets/images/splash.png'
+  fullscreen: false
