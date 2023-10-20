@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:ukapp/dataUtil.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:ukapp/data_util.dart';
 
 class ClassRooms {
   List<String> kanjiList = [];
@@ -10,7 +10,7 @@ class ClassRooms {
   List<double> xList = [];
   List<double> yList = [];
   List<int> floorList = [];
-
+  List<String> setumeiList = []; //追加分
   void init() {
     Future<File> file = DataUtil.getFileFromAssets("classRoom.csv");
 
@@ -24,6 +24,7 @@ class ClassRooms {
           xList.add(double.parse(list[3]));
           yList.add(double.parse(list[4]));
           floorList.add(int.parse(list[5]));
+          setumeiList.add(list[6]); //追加分
         }
       });
     });

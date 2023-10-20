@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     Future.delayed(
         const Duration(seconds: 1), () => FlutterNativeSplash.remove());
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'ukapp2',
       theme: ThemeData.dark(),
       home: const MainMenu(),
     );

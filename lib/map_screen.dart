@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:ukapp/LocationData.dart';
-import 'package:ukapp/map_search.dart';
-import 'package:ukapp/qrCode.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:ukapp/location_data.dart';
+import 'package:ukapp/map_search.dart';
+import 'package:ukapp/qr_code.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class MapScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class MapScreen extends StatefulWidget {
 class _MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
   late TabController tabController;
   final LocationData _locationData = LocationData(
-      location: LatLng(0, 0),
+    location: LatLng(0, 0),
     floor: 0,
   );
   bool _actionButtonVisible = false;
@@ -326,7 +326,7 @@ class _FloorMap extends State<FloorMap>
         youtubePlayerController.pause();
       },
     );
-    return floor != 0 ? tab: map;
+    return floor != 0 ? tab : map;
   }
 
   @override
@@ -360,21 +360,27 @@ class _FloorMap extends State<FloorMap>
                 height: 20,
               ),
               FittedBox(
-                fit: BoxFit.scaleDown,
+                  fit: BoxFit.scaleDown,
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    locationData.floor == floor ?
-                locationData.locationName ?? "部屋情報を取得中..." : "部屋情報を取得中...",
-                style: const TextStyle(fontSize: 20,),
-              )),
+                    locationData.floor == floor
+                        ? locationData.locationName ?? "部屋情報を取得中..."
+                        : "部屋情報を取得中...",
+                    style: const TextStyle(
+                      fontSize: 26,
+                    ),
+                  )),
               const SizedBox(
                 height: 20,
               ),
-              const Text("debug: 部屋の写真、紹介youtube"),
+              Text(
+                oldFloor == floor ? locationData.explanation! : "",
+                style: TextStyle(fontSize: 19),
+              ),
               const SizedBox(
                 height: 200,
               ),
-              Text(oldFloor == floor ? locationData.explanation! : ""),
+              const Text("debug:部屋の写真"),
             ])));
   }
 }

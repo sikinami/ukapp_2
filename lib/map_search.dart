@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ukapp/LocationData.dart';
 import 'package:ukapp/classrooms.dart';
+import 'package:ukapp/location_data.dart';
 
 class MapSearchScreen extends StatefulWidget {
   const MapSearchScreen({Key? key, required this.title}) : super(key: key);
@@ -77,15 +77,15 @@ class _MapSearchScreenState extends State<MapSearchScreen> {
                 ),
                 onTap: () => {
                   Navigator.pop(
-                      context,
-                      LocationData(
-                          location: rooms.getLocation(result[index]),
-                          floor: rooms.floorList[
-                              rooms.kanjiList.indexOf(result[index])],
+                    context,
+                    LocationData(
+                        location: rooms.getLocation(result[index]),
+                        floor: rooms
+                            .floorList[rooms.kanjiList.indexOf(result[index])],
                         locationName: result[index],
-                        explanation: "debug:部屋の説明（テキスト形式で）"
-                      )
-                  ),
+                        explanation: rooms.setumeiList[
+                            rooms.kanjiList.indexOf(result[index])]),
+                  )
                 },
                 leading: const Icon(Icons.location_pin),
               ),

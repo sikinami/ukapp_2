@@ -1,10 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:ukapp/TrainData.dart';
 import 'package:intl/intl.dart';
-
-
+import 'package:ukapp/train_data.dart';
 
 class TimeTableScreen extends StatefulWidget {
   const TimeTableScreen({Key? key, required String title}) : super(key: key);
@@ -37,7 +35,7 @@ class _TimeTableScreenState extends State<TimeTableScreen>
   }
 
   void adderTime(Timer timer) {
-    setState(() => {_timeString = _timeFormat.format(DateTime.now())});
+    setState(() => _timeString = _timeFormat.format(DateTime.now()));
   }
 
   @override
@@ -279,7 +277,9 @@ class _TimeTableScreenState extends State<TimeTableScreen>
                                     ]),
                                     subtitle: Text(TrainDataList.getTrainName(
                                             noboriList[0].name) +
-                                        " " + noboriList[index].service + " " +
+                                        " " +
+                                        noboriList[index].service +
+                                        " " +
                                         noboriList[0].destination +
                                         "行"),
                                     leading: const Icon(
@@ -309,7 +309,9 @@ class _TimeTableScreenState extends State<TimeTableScreen>
                         ),
                         subtitle: Text(
                             TrainDataList.getTrainName(noboriList[index].name) +
-                                " " + noboriList[index].service + " " +
+                                " " +
+                                noboriList[index].service +
+                                " " +
                                 noboriList[index].destination +
                                 "行"),
                         leading: const Icon(Icons.train_rounded),

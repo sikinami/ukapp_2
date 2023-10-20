@@ -19,7 +19,7 @@ dependencies:
   latlong2:
   flutter_map_marker_cluster:
   sliding_up_panel:
-  csv:
+  csv: ^5.0.2
   path_provider: ^2.0.11
   intl:
   qr_code_scanner: ^1.0.0
@@ -27,6 +27,7 @@ dependencies:
   flutter_native_splash:
   youtube_player_flutter:
   cupertino_icons: ^1.0.2
+
 
 dev_dependencies:
   flutter_test:
