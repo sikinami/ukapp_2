@@ -204,13 +204,7 @@ class _TrainDataFormat {
       }
     }
     DateTime nowTime = kDebugMode ? DateTime(2022, 6, 21) : DateTime.now();
-    DateTime time = format.parseStrict(nowTime.year.toString() +
-        "/" +
-        nowTime.month.toString() +
-        "/" +
-        nowTime.day.toString() +
-        " " +
-        csvLine[0]);
+    DateTime time = format.parseStrict("${nowTime.year}/${nowTime.month}/${nowTime.day} ${csvLine[0]}");
 
     if (time.hour < 1) {
       time.add(const Duration(days: 1));

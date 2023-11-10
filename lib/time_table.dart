@@ -60,9 +60,9 @@ class _TimeTableScreenState extends State<TimeTableScreen>
                       children: [
                         Container(
                           height: 70,
-                          child: const Align(child: Text("列車選択")),
                           decoration:
                               const BoxDecoration(color: Colors.black12),
+                          child: const Align(child: Text("列車選択")),
                         ),
                         const SizedBox(
                           height: 70,
@@ -183,11 +183,8 @@ class _TimeTableScreenState extends State<TimeTableScreen>
                                         height: 45,
                                       )
                                     ]),
-                                    subtitle: Text(TrainDataList.getTrainName(
-                                            kudariList[0].name) +
-                                        " " +
-                                        kudariList[0].destination +
-                                        "行"),
+                                    subtitle: Text(
+                                        "${TrainDataList.getTrainName(kudariList[0].name)} ${kudariList[0].destination}行"),
                                     leading: const Icon(
                                       Icons.train_rounded,
                                       size: 40,
@@ -210,11 +207,8 @@ class _TimeTableScreenState extends State<TimeTableScreen>
                                       ))
                                 ],
                               ),
-                              subtitle: Text(TrainDataList.getTrainName(
-                                      kudariList[index].name) +
-                                  " " +
-                                  kudariList[index].destination +
-                                  "行"),
+                              subtitle: Text(
+                                  "${TrainDataList.getTrainName(kudariList[index].name)} ${kudariList[index].destination}行"),
                               leading: const Icon(Icons.train_rounded)));
                     })
                 : const Center(
@@ -275,13 +269,8 @@ class _TimeTableScreenState extends State<TimeTableScreen>
                                         height: 45,
                                       )
                                     ]),
-                                    subtitle: Text(TrainDataList.getTrainName(
-                                            noboriList[0].name) +
-                                        " " +
-                                        noboriList[index].service +
-                                        " " +
-                                        noboriList[0].destination +
-                                        "行"),
+                                    subtitle: Text(
+                                        "${TrainDataList.getTrainName(noboriList[0].name)} ${noboriList[index].service} ${noboriList[0].destination}行"),
                                     leading: const Icon(
                                       Icons.train_rounded,
                                       size: 40,
@@ -308,12 +297,7 @@ class _TimeTableScreenState extends State<TimeTableScreen>
                           ],
                         ),
                         subtitle: Text(
-                            TrainDataList.getTrainName(noboriList[index].name) +
-                                " " +
-                                noboriList[index].service +
-                                " " +
-                                noboriList[index].destination +
-                                "行"),
+                            "${TrainDataList.getTrainName(noboriList[index].name)} ${noboriList[index].service} ${noboriList[index].destination}行"),
                         leading: const Icon(Icons.train_rounded),
                       ));
                     })

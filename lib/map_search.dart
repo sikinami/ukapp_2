@@ -70,10 +70,10 @@ class _MapSearchScreenState extends State<MapSearchScreen> {
                       )
                     ]),
                 subtitle: Container(
-                  child: Text(rooms
-                      .suggestionList[rooms.kanjiList.indexOf(result[index])]),
                   decoration:
                       const BoxDecoration(border: Border(bottom: BorderSide())),
+                  child: Text(rooms
+                      .suggestionList[rooms.kanjiList.indexOf(result[index])]),
                 ),
                 onTap: () => {
                   Navigator.pop(
@@ -84,7 +84,9 @@ class _MapSearchScreenState extends State<MapSearchScreen> {
                             .floorList[rooms.kanjiList.indexOf(result[index])],
                         locationName: result[index],
                         explanation: rooms.setumeiList[
-                            rooms.kanjiList.indexOf(result[index])]),
+                            rooms.kanjiList.indexOf(result[index])],
+                        youtubeID: rooms.urlList[
+                            rooms.kanjiList.indexOf(result[index])]), //追加分1110
                   )
                 },
                 leading: const Icon(Icons.location_pin),

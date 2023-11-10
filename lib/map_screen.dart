@@ -6,6 +6,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:ukapp/location_data.dart';
 import 'package:ukapp/map_search.dart';
 import 'package:ukapp/qr_code.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class MapScreen extends StatefulWidget {
@@ -52,6 +53,7 @@ class _MapScreenState extends State<MapScreen> with TickerProviderStateMixin {
       _locationData.setFloor(locationData.floor);
       _locationData.locationName = locationData.locationName;
       _locationData.explanation = locationData.explanation;
+      _locationData.youtubeID = locationData.youtubeID;
     });
   }
 
@@ -335,52 +337,75 @@ class _FloorMap extends State<FloorMap>
 
   Widget _panel(ScrollController controller, BuildContext context) {
     return MediaQuery.removePadding(
-        context: context,
-        removeTop: true,
-        child: Container(
-            padding: const EdgeInsets.only(left: 30, right: 30),
-            child: ListView(controller: controller, children: [
-              const SizedBox(
-                height: 12.0,
+      context: context,
+      removeTop: true,
+      child: Container(
+        padding: const EdgeInsets.only(left: 30, right: 30),
+        child: ListView(controller: controller, children: [
+          const SizedBox(
+            height: 12.0,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                width: 30,
+                height: 5,
+                decoration: BoxDecoration(
+                    color: Colors.grey[300],
+                    borderRadius:
+                        const BorderRadius.all(Radius.circular(12.0))),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    width: 30,
-                    height: 5,
-                    decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(12.0))),
-                  ),
-                ],
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
+                locationData.floor == floor
+                    ? locationData.locationName ?? "部屋情報を取得中..."
+                    : "部屋情報を取得中...",
+                style: const TextStyle(
+                  fontSize: 26,
+                ),
+              )),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+            oldFloor == floor ? locationData.explanation! : "",
+            style: TextStyle(fontSize: 19),
+          ),
+          const SizedBox(height: 20),
+          if (locationData.youtubeID != null &&
+              locationData.youtubeID!.isNotEmpty)
+            TextButton(
+              onPressed: () {
+                _launchURL(locationData.youtubeID!);
+              },
+              child: Text(
+                oldFloor == floor ? locationData.youtubeID! : "",
+                style: const TextStyle(
+                  fontSize: 19,
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
+                ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              FittedBox(
-                  fit: BoxFit.scaleDown,
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    locationData.floor == floor
-                        ? locationData.locationName ?? "部屋情報を取得中..."
-                        : "部屋情報を取得中...",
-                    style: const TextStyle(
-                      fontSize: 26,
-                    ),
-                  )),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                oldFloor == floor ? locationData.explanation! : "",
-                style: TextStyle(fontSize: 19),
-              ),
-              const SizedBox(
-                height: 200,
-              ),
-              const Text("debug:部屋の写真"),
-            ])));
+            ),
+        ]),
+      ),
+    );
+  }
+
+  _launchURL(String youtubeId) async {
+    final url = youtubeId;
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'URLを開けませんでした：$url';
+    }
   }
 }

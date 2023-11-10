@@ -11,6 +11,7 @@ class ClassRooms {
   List<double> yList = [];
   List<int> floorList = [];
   List<String> setumeiList = []; //追加分
+  List<String> urlList = []; //追加分
   void init() {
     Future<File> file = DataUtil.getFileFromAssets("classRoom.csv");
 
@@ -24,7 +25,8 @@ class ClassRooms {
           xList.add(double.parse(list[3]));
           yList.add(double.parse(list[4]));
           floorList.add(int.parse(list[5]));
-          setumeiList.add(list[6]); //追加分
+          setumeiList.add(list[6]); // 追加分
+          urlList.add(list[7]); //追加分
         }
       });
     });

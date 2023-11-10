@@ -39,13 +39,13 @@ class _MainMenuState extends State<MainMenu> {
                     MaterialPageRoute(
                         builder: (context) =>
                             const MapScreen(title: "mapScreen"))),
-                child: Card(
+                child: const Card(
                   child: SizedBox(
                     width: 180,
                     height: 180,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Icon(
                           Icons.map,
                           size: 60,
@@ -54,7 +54,10 @@ class _MainMenuState extends State<MainMenu> {
                           "校内マップ",
                           style: TextStyle(fontSize: 30),
                         ),
-                        Text("学校内の地図を表示します。",style: TextStyle(fontSize: 13,color: Colors.white70),)
+                        Text(
+                          "学校内の地図を表示します。",
+                          style: TextStyle(fontSize: 13, color: Colors.white70),
+                        )
                       ],
                     ),
                   ),
@@ -71,13 +74,13 @@ class _MainMenuState extends State<MainMenu> {
                     MaterialPageRoute(
                         builder: (context) =>
                             const TimeTableScreen(title: "mapScreen"))),
-                child: Card(
+                child: const Card(
                   child: SizedBox(
                     width: 180,
                     height: 180,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Icon(
                           Icons.train,
                           size: 60,
@@ -86,7 +89,10 @@ class _MainMenuState extends State<MainMenu> {
                           "時刻表",
                           style: TextStyle(fontSize: 30),
                         ),
-                        Text("雀宮駅からの各方面の時刻表を表示します。",style: TextStyle(fontSize: 13,color: Colors.white70),)
+                        Text(
+                          "雀宮駅からの各方面の時刻表を表示します。",
+                          style: TextStyle(fontSize: 13, color: Colors.white70),
+                        )
                       ],
                     ),
                   ),
